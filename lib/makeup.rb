@@ -3,15 +3,17 @@
 # save all makeup created
 
 class Makeup
-    attr_accessor :name, :brand, :price
+    attr_accessor :name, :brand, :price, :colors
 
     @@all = []
 
     def initialize(name:, brand:, price:)
         @name = name
-        @brand = brand
+        @brand = brand 
         @price = price
+        @colors = []
         @@all << self
+        
     end
 
     def self.all
