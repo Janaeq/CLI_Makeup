@@ -8,22 +8,15 @@ class API
         response = Net::HTTP.get(uri)
         makeup = JSON.parse(response) #array of hashes
         makeup.each do |m| # m is the hash being iterated over
-            a = Makeup.new(name: m["name"], brand: m["brand"], price: m["price"])
-            # tags: m["tag_list"].join(", ")
+            a = Makeup.new(name: m["name"], brand: m["brand"], price: m["price"], description: m["description"], website: m["product_link"], rating: m["rating"])
+            # binding.pry
             m["product_colors"].each do |color|
                 a.colors << color["colour_name"]
-               
-            end
-                # arr = []
-                # arr.push(color["colour_name"])
-                # arr
+               end
             
-            
-
             #brand, tag list, product colors(color name) "This product comes in the following colors" Also maybe price. If it's free puts "What a steal!" lol. Maybe also ratings. puts "Other people rated this product a #{interpolate}".
             # maybe yes requested by user display product color names, price, ratings
-            
+            # add to bag? if yes shovel into an array called cart or something
         end
-        # 
     end
 end
