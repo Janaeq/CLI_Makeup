@@ -4,6 +4,8 @@
 
 class CLI
 
+    @@cart = []
+
     def start
         puts ""
         puts "Welcome! Let's find some makeup."
@@ -18,17 +20,22 @@ class CLI
         makeup = Makeup.all
         print_makeup(makeup)
         puts ""
-        puts "Enter in the product number that you would like more information on."
+        puts "Enter in the product number that you would like more information on, or type 'exit' to exit this program."
         puts ""
-        item_number = gets.chomp.to_i - 1
-        @item_instance_number = makeup[item_number]
-        more_info(@item_instance_number)
-        # puts ""
-        # puts "Would you like to buy this product?"
-        # puts ""
-        # purchase = gets.chomp.downcase
-        buy_item 
+        inp = gets.chomp.downcase
         # binding.pry
+        while inp != 'exit' do
+           makeup = Makeup.find_by_product(@product)[inp.to_i - 1]
+           API.get_details(makeup) #instead of doing this we can find those products by brand
+            # int_input = input.to_i - 1
+            # @item_number = makeup[int_input]
+            # more_info(@item_number)
+            # buy_item 
+
+        end
+        puts ""
+        puts "Thanks for using this program. See ya next time!"
+        puts ""
     end
 
     def print_makeup(mu)
@@ -58,7 +65,6 @@ class CLI
         else
             puts "Other people gave this product #{info.rating} out of 5 stars!"
         end
-        puts ""
         if info.price.to_i == 0
             puts "This product is FREE!"
         elsif info.price.to_i <= 5
@@ -74,20 +80,21 @@ class CLI
         puts "Would you like to buy this product?"
         puts ""
         inp = gets.chomp.downcase
-
-        if inp != "yes" || inp != "no"
+        # binding.pry
+        if inp != "yes" && inp != "no"
             puts ""
             puts "I'm not sure what you mean. Please enter 'Yes' or 'No'."
             puts ""
+            inp = gets.chomp.downcase
         elsif inp == "yes"
-            if @item_instance_number.website == nil
+            if @item_number.website == nil
                 puts "Sorry, this item is discontinued!"
             else
-                puts "You can buy this product at this website: #{@item_instance_number.website}"
+                puts "You can buy this product at this website: #{@item_number.website}. It is now in your cart."
+                
             end
         else inp == "no"
-            self.start
         end
-        binding.pry
+        # binding.pry
     end
 end
