@@ -141,7 +141,7 @@ class CLI
         end
         puts ""
     end
-#difficulty here
+#
     def buy_item
         puts "Would you like to buy this product?"
         puts ""
