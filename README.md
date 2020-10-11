@@ -8,7 +8,7 @@ If they choose to buy, a link where the product can be purchased will be display
 ## Getting Started
 Fork and clone this repository, and run the code 
 ```
-'ruby bin/start'
+ruby bin/start
 ```
 
 ## Built With
