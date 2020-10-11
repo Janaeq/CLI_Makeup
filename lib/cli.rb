@@ -220,14 +220,23 @@ class CLI
     end
 
     def brand_condition(inp)
+        while inp != "list" && inp != "exit"
+            buy_item_decision
+            inp = gets.chomp.downcase
+        end
         if inp == "list"
             brand_list
             prompt
         elsif inp == "exit"
         end
+        
     end
 
     def condition(inp)
+        while inp != "list" && inp != "exit"
+            buy_item_decision
+            inp = gets.chomp.downcase
+        end
         if inp == "list"
             print_makeup(@makeup)
             prompt
