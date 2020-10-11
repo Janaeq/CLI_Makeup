@@ -10,6 +10,11 @@ Fork and clone this repository, and run the code
 ```
 ruby bin/start
 ```
+## Contributing
+Pull requests and bug reports can be sent to me at [My Profile](https://github.com/Janaeq/CLI_Makeup). This is my first time creating anything like this, so collaboration is definitely welcome. All contributors and collaborators are expected to adhere to the [Code of Conduct](https://github.com/Janaeq/CLI_Makeup/blob/main/CODE_OF_CONDUCT.md).
+
+## License
+This repo is available as an open source under the terms of the [MIT License](https://github.com/Janaeq/CLI_Makeup/blob/main/license.txt).
 
 ## Built With
 * [Makeup API](http://makeup-api.herokuapp.com/)
