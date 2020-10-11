@@ -1,7 +1,3 @@
-# going to keep track of makeup
-# turn responses into objects
-# save all makeup created
-
 class Makeup
     attr_accessor :name, :brand, :price, :colors, :description, :website, :rating, :product
 

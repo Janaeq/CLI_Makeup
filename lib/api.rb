@@ -1,5 +1,3 @@
-# handle all of our api requests
-
 class API
 
     def self.fetch_makeup(product)
