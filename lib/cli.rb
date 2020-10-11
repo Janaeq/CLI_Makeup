@@ -81,7 +81,6 @@ class CLI
         puts "What kind of product are you looking for?"
         puts ""
         @product = gets.chomp.downcase
-        # product parameters - Makeup.available_products
         while Makeup.available_products.include?(@product) == false
             puts ""
             puts "Hmm, it doesn't look like we carry that product."
@@ -126,16 +125,14 @@ class CLI
         end
     end
 
-    def print_makeup(m) # m is an array of all makeup instances (Makeup.all)
+    def print_makeup(m) 
         puts""
         puts "Here is a list of all the #{@product} we have:"
         puts ""
-        m.each_with_index do |m, i| # m is one makeup instance. i is that instances position in the array Makeup.all
-            # if the instance has a brand, display the number associated to that instance, the brand - name
+        m.each_with_index do |m, i|
             if m.brand 
             puts "#{i+1}. #{m.brand.split(/ |\_|\-/).map(&:capitalize).join(" ")} - #{m.name}"
-            else 
-                # if the instance does not have a brand, put just the number and the name
+            else
                 puts "#{i+1}. #{m.name}"
             end
         end

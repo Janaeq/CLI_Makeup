@@ -22,7 +22,7 @@ class Makeup
         @@all
     end
 
-    def self.available_brands #specific to the product that the user is asking for
+    def self.available_brands 
         @@brand.uniq.compact
     end
 
@@ -30,7 +30,7 @@ class Makeup
         @@available_products
     end
 
-    def self.find_by_brand(brand) # an array
+    def self.find_by_brand(brand) 
         @@all.select {|m| m.brand == brand}
     end
 end

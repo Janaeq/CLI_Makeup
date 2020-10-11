@@ -11,10 +11,5 @@ class API
                 a.colors << color["colour_name"]
             end
         end
-
     end
-
-    # def self.get_details(brand) #maybe instead of doing this, we can find those products by brand
-    #     binding.pry
-    # end
 end
